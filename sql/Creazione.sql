@@ -48,6 +48,21 @@ CREATE TABLE has_cart(
     PRIMARY KEY(user_id, game_id)
 );
 
+DROP TABLE IF EXISTS has_role;
+CREATE TABLE has_role(
+	user_id int NOT NULL,
+    role varchar(32) NOT NULL DEFAULT "USER",
+    
+    PRIMARY KEY(user_id, role)
+);
+
+CREATE TABLE views (
+  role varchar(16) NOT NULL,
+  view varchar(16) NOT NULL,
+  path varchar(32) NOT NULL,
+  PRIMARY KEY (role, view)
+);
+
 DROP TABLE IF EXISTS blog;
 CREATE TABLE blog(
 	blog_id int NOT NULL AUTO_INCREMENT,

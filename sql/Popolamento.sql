@@ -27,4 +27,17 @@ INSERT INTO blog(blog_title, blog_short_title, blog_html) VALUES
 	("Saldi estivi", "Sono in arrivo i saldi estivi su Shodan!", "I saldi estivi sono finalmente in arrivo su <b>Shodan</b>. System Shock, Crash Bandicoot e tanti altri titoli saranno scontati a prezzi imperdibili, per tutta la durata della stagione estiva!"),
     ("In arrivo Super Mario", "Direttamente dal Giappone, Super Mario compare su Shodan!", "Il franchise-cult giapponese che ha fatto innamorare tanti videogiocatori da tutto il mondo sta finalmente per arrivare su Shodan. Dai primissimi titoli degli anni 80, fino ai più recenti: l'intero franchise sarà disponibile sulla piattaforma entro la fine dell'anno!");
 
-SELECT * FROM users;
+DELETE FROM has_role;
+INSERT INTO has_role(user_id, role) VALUES
+	(0, "USER"),
+    (0, "WRITER");
+
+INSERT INTO views VALUES 
+	('GUEST','MAIN','Dashboard.jsp'),
+	('GUEST','NAV','Nav/NavGuest.jsp'),
+	('STOREMAN','MAIN','Storeman.jsp'),
+	('STOREMAN','NAV','Nav/NavStoreman.jsp'),
+	('USER','MAIN','Dashboard.jsp'),
+	('USER','NAV','Nav/NavUser.jsp'),
+	('WRITER','MAIN','Writer.jsp'),
+	('WRITER','NAV','Nav/NavWriter.jsp');

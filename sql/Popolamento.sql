@@ -30,7 +30,8 @@ INSERT INTO blog(blog_title, blog_short_title, blog_html) VALUES
 DELETE FROM has_role;
 INSERT INTO has_role(user_id, role) VALUES
 	(1, "USER"), /* admin -> user role */
-    (1, "WRITER"); /* admin -> writer role */
+    (1, "WRITER"), /* admin -> writer role */
+	(1, "STOREMAN"); /* admin -> storeman role */
 
 DELETE FROM views;
 INSERT INTO views VALUES 

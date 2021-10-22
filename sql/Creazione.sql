@@ -55,6 +55,7 @@ CREATE TABLE has_role(
     PRIMARY KEY(user_id, role)
 );
 
+DROP TABLE IF EXISTS views;
 CREATE TABLE views (
   role varchar(16) NOT NULL,
   view varchar(16) NOT NULL,

@@ -3,8 +3,8 @@ USE shodan;
 SET SQL_SAFE_UPDATES = 0;
 
 DELETE FROM users;
-INSERT INTO users(user_name, user_password, user_email, user_admin) VALUES 
-	('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "antonio@shodan.it", 1); /* Password: 123 in SHA256 */
+INSERT INTO users(user_name, user_password, user_email) VALUES 
+	('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "antonio@shodan.it"); /* Password: 123 in SHA256 */
 
 DELETE FROM games;
 INSERT INTO games(game_name, game_image, game_description, game_price, game_release) VALUES 
@@ -29,9 +29,10 @@ INSERT INTO blog(blog_title, blog_short_title, blog_html) VALUES
 
 DELETE FROM has_role;
 INSERT INTO has_role(user_id, role) VALUES
-	(0, "USER"),
-    (0, "WRITER");
+	(1, "USER"), /* admin -> user role */
+    (1, "WRITER"); /* admin -> writer role */
 
+DELETE FROM views;
 INSERT INTO views VALUES 
 	('GUEST','MAIN','Dashboard.jsp'),
 	('GUEST','NAV','Nav/NavGuest.jsp'),

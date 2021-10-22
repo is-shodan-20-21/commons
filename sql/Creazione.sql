@@ -14,7 +14,6 @@ CREATE TABLE users(
     user_password varchar(256) NOT NULL,
     user_email varchar(32) NOT NULL,
     user_money int NOT NULL DEFAULT 500,
-    user_admin boolean NOT NULL DEFAULT false,
     user_session varchar(32) DEFAULT NULL,
     
     PRIMARY KEY(user_id)

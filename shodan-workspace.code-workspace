@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../shodan-maven"
+		},
+		{
+			"path": "../commons"
+		},
+		{
+			"path": "../deliverables"
+		},
+		{
+			"path": "../docs"
+		},
+		{
+			"path": "../shodan-infopoint"
+		}
+	],
+	"settings": {}
+}

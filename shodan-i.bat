@@ -4,24 +4,6 @@ ECHO SHODAN [IS-21/22-DE LUCIA] Installer @ /is-shodan-21-22/commons/
 
 ECHO.
 
-ECHO L'installer tentera' di avviare automaticamente il server.
-
-ECHO.
-
-ECHO Prima di proseguire, avviare Visual Studio Code, premere Ctrl+Shift+P ...
-
-ECHO ... digitare "Tasks: Manage Automatic Tasks in Folder" e attivare "Allow Automatic Tasks in Folder".
-
-ECHO.
-
-ECHO In alternativa, e' possibile evitare del tutto questo passaggio e proseguire senza avvio automatico.
-
-ECHO.
-
-PAUSE
-
-ECHO.
-
 ECHO Inserire la password dell'utente 'root' di MySQL.
 
 set /p SHODAN_DB_PASSWORD="shodan_db_connection_password: "
@@ -92,22 +74,15 @@ cd ..
 
 ECHO.
 
-ECHO Opening Visual Studio Code...
+ECHO Opening Visual Studio Code... [use: mvn tomcat7:run to start]
 
 CALL code commons/shodan-workspace.code-workspace -g shodan-maven/README.md
 
 ECHO.
 
-ECHO Running SHODAN_MAVEN @ localhost:8080/shodan_maven/ on Chrome
-ECHO Se l'avvio automatico non e' stato attivato, verra' restituito un 404.
-
-CALL start "chrome" http://localhost:8080/shodan_maven
-
-ECHO.
-
 ECHO Download [{vhs.mp4} ~ 105mb]
 ECHO Non chiudere la shell durante il download.
-ECHO Se non si è su Linux, si potrebbero ottenere errori (irrilevanti) relativi a comandi inesistenti.
+ECHO Se non si è su Linux, si potrebbero incontrare errori.
 
 ECHO.
 

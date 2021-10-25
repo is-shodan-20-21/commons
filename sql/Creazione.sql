@@ -77,7 +77,7 @@ DROP TABLE IF EXISTS cards;
 CREATE TABLE cards(
 	card_id int NOT NULL AUTO_INCREMENT,
     card_type varchar(32) NOT NULL,
-    card_number double NOT NULL,
+    card_number long NOT NULL,
     card_owner varchar(64) NOT NULL,
     card_date date NOT NULL,
     

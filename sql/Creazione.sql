@@ -72,3 +72,31 @@ CREATE TABLE blog(
     
     PRIMARY KEY(blog_id)
 );
+
+DROP TABLE IF EXISTS cards;
+CREATE TABLE cards(
+	card_id int NOT NULL AUTO_INCREMENT,
+    card_type varchar(32) NOT NULL,
+    card_number int NOT NULL,
+    card_owner varchar(64) NOT NULL,
+    card_date date NOT NULL,
+    
+    PRIMARY KEY(card_id)
+);
+
+DROP TABLE IF EXISTS has_card;
+CREATE TABLE has_card(
+    user_id int NOT NULL,
+	card_id int NOT NULL,
+    
+    PRIMARY KEY(user_id, card_id)
+);
+
+DROP TABLE IF EXISTS transactions;
+CREATE TABLE transactions(
+    user_id int NOT NULL,
+    game_id int NOT NULL,
+    transaction_date DATE NOT NULL,
+
+    PRIMARY KEY(user_id, game_id, transaction_date)
+);

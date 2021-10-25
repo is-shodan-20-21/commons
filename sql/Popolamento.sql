@@ -43,3 +43,13 @@ INSERT INTO views VALUES
 	('USER','NAV','Nav/NavUser.jsp'),
 	('WRITER','MAIN','Writer.jsp'),
 	('WRITER','NAV','Nav/NavWriter.jsp');
+
+DELETE FROM cards;
+INSERT INTO cards(card_type, card_number, card_owner, card_date) VALUES
+	("VISA", 5178916782087614, "Raffaele Zheng", "2023-05-21"),
+	("MASTERCARD", 8219671281263412, "Francis J. Erikson", "2024-09-15");
+
+DELETE FROM has_card;
+INSERT INTO has_card(user_id, card_id) VALUES 
+	(1, 1),
+    (1, 2);

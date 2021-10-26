@@ -27,6 +27,7 @@ CREATE TABLE games(
     game_description varchar(4096),
     game_price int DEFAULT 0,
     game_release date,
+    game_landscape varchar(64),
     
     PRIMARY KEY(game_id)
 );

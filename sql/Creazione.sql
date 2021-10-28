@@ -2,7 +2,7 @@ USE mysql;
 DROP USER IF EXISTS 'shodan_username'@'localhost';
 CREATE USER 'shodan_username'@'localhost' IDENTIFIED BY 'shodan_password';
 DROP DATABASE IF EXISTS shodan;
-CREATE DATABASE shodan;
+CREATE DATABASE shodan CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 GRANT ALL ON shodan.* TO 'shodan_username'@'localhost';
 SET SQL_SAFE_UPDATES = 0;
 USE shodan;

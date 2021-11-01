@@ -16,5 +16,7 @@
 			"path": "../shodan-infopoint"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
 }

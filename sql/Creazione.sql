@@ -16,7 +16,7 @@ CREATE TABLE users(
     user_money int NOT NULL DEFAULT 500,
     user_session varchar(32) DEFAULT NULL,
     
-    PRIMARY KEY(user_id)
+    PRIMARY KEY(user_id, user_name, user_email)
 );
 
 DROP TABLE IF EXISTS games;
@@ -98,6 +98,7 @@ CREATE TABLE transactions(
     user_id int NOT NULL,
     game_id int NOT NULL,
     transaction_date DATE NOT NULL,
+    transaction_price int NOT NULL,
 
     PRIMARY KEY(user_id, game_id, transaction_date)
 );

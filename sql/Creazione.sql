@@ -24,7 +24,7 @@ CREATE TABLE games(
 	game_id int NOT NULL AUTO_INCREMENT,
 	game_name varchar(32) NOT NULL,
     game_image varchar(32) NOT NULL,
-    game_description varchar(4096),
+    game_description varchar(16165),
     game_price int DEFAULT 0,
     game_release date,
     game_landscape varchar(64),

@@ -56,6 +56,14 @@ CREATE TABLE has_role(
     PRIMARY KEY(user_id, role)
 );
 
+DROP TABLE IF EXISTS has_written;
+CREATE TABLE has_written(
+	user_id int NOT NULL,
+    blog_id int NOT NULL,
+    
+    PRIMARY KEY(user_id, blog_id)
+);
+
 DROP TABLE IF EXISTS views;
 CREATE TABLE views (
   role varchar(16) NOT NULL,

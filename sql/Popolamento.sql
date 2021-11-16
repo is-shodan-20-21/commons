@@ -29,6 +29,11 @@ INSERT INTO has_game VALUES
     (1, 2),
     (1, 3);
 
+DELETE FROM has_written;
+INSERT INTO has_written VALUES 
+	(1, 1),
+    (1, 2);
+
 DELETE FROM blog;
 INSERT INTO blog(blog_title, blog_short_title, blog_html) VALUES
 	("Saldi estivi", "Sono in arrivo i saldi estivi su Shodan!", "I saldi estivi sono finalmente in arrivo su <b>Shodan</b>. System Shock, Crash Bandicoot e tanti altri titoli saranno scontati a prezzi imperdibili, per tutta la durata della stagione estiva!"),

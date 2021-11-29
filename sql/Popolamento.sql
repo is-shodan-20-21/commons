@@ -29,15 +29,10 @@ INSERT INTO has_game VALUES
     (1, 2),
     (1, 3);
 
-DELETE FROM has_written;
-INSERT INTO has_written VALUES 
-	(1, 1),
-    (1, 2);
-
 DELETE FROM blog;
-INSERT INTO blog(blog_title, blog_short_title, blog_html) VALUES
-	("Saldi estivi", "Sono in arrivo i saldi estivi su Shodan!", "I saldi estivi sono finalmente in arrivo su <b>Shodan</b>. System Shock, Crash Bandicoot e tanti altri titoli saranno scontati a prezzi imperdibili, per tutta la durata della stagione estiva!"),
-    ("In arrivo Super Mario", "Direttamente dal Giappone, Super Mario compare su Shodan!", "Il franchise-cult giapponese che ha fatto innamorare tanti videogiocatori da tutto il mondo sta finalmente per arrivare su Shodan. Dai primissimi titoli degli anni 80, fino ai più recenti: l'intero franchise sarà disponibile sulla piattaforma entro la fine dell'anno!");
+INSERT INTO blog(blog_title, blog_short_title, blog_html, user_id) VALUES
+	("Saldi estivi", "Sono in arrivo i saldi estivi su Shodan!", "I saldi estivi sono finalmente in arrivo su <b>Shodan</b>. System Shock, Crash Bandicoot e tanti altri titoli saranno scontati a prezzi imperdibili, per tutta la durata della stagione estiva!", 1),
+    ("In arrivo Super Mario", "Direttamente dal Giappone, Super Mario compare su Shodan!", "Il franchise-cult giapponese che ha fatto innamorare tanti videogiocatori da tutto il mondo sta finalmente per arrivare su Shodan. Dai primissimi titoli degli anni 80, fino ai più recenti: l'intero franchise sarà disponibile sulla piattaforma entro la fine dell'anno!", 1);
 
 DELETE FROM has_role;
 INSERT INTO has_role(user_id, role) VALUES
@@ -57,11 +52,6 @@ INSERT INTO views VALUES
 	('WRITER','NAV','Nav/NavWriter.jsp');
 
 DELETE FROM cards;
-INSERT INTO cards(card_type, card_number, card_owner, card_date) VALUES
-	("VISA", 5178916782087614, "Raffaele Zheng", "2023-05-21"),
-	("MASTERCARD", 8219671281263412, "Francis J. Erikson", "2024-09-15");
-
-DELETE FROM has_card;
-INSERT INTO has_card(user_id, card_id) VALUES 
-	(1, 1),
-    (1, 2);
+INSERT INTO cards(card_type, card_number, card_owner, card_date, user_id) VALUES
+	("VISA", 5178916782087614, "Raffaele Zheng", "2023-05-21", 1),
+	("MASTERCARD", 8219671281263412, "Francis J. Erikson", "2024-09-15", 1);

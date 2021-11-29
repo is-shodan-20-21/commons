@@ -56,14 +56,6 @@ CREATE TABLE has_role(
     PRIMARY KEY(user_id, role)
 );
 
-DROP TABLE IF EXISTS has_written;
-CREATE TABLE has_written(
-	user_id int NOT NULL,
-    blog_id int NOT NULL,
-    
-    PRIMARY KEY(user_id, blog_id)
-);
-
 DROP TABLE IF EXISTS views;
 CREATE TABLE views (
   role varchar(16) NOT NULL,
@@ -78,8 +70,9 @@ CREATE TABLE blog(
     blog_title varchar(128) NOT NULL,
     blog_short_title varchar(256),
     blog_html varchar(512),
+    user_id int NOT NULL,
     
-    PRIMARY KEY(blog_id)
+    PRIMARY KEY(blog_id, user_id)
 );
 
 DROP TABLE IF EXISTS cards;
@@ -89,16 +82,9 @@ CREATE TABLE cards(
     card_number long NOT NULL,
     card_owner varchar(64) NOT NULL,
     card_date date NOT NULL,
+    user_id int NOT NULL,
     
     PRIMARY KEY(card_id)
-);
-
-DROP TABLE IF EXISTS has_card;
-CREATE TABLE has_card(
-    user_id int NOT NULL,
-	card_id int NOT NULL,
-    
-    PRIMARY KEY(user_id, card_id)
 );
 
 DROP TABLE IF EXISTS transactions;

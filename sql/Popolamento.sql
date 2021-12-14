@@ -3,8 +3,12 @@ USE shodan;
 SET SQL_SAFE_UPDATES = 0;
 
 DELETE FROM users;
+/* Password: 123 in SHA256 */
 INSERT INTO users(user_name, user_password, user_email) VALUES 
-	('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "antonio@shodan.it"); /* Password: 123 in SHA256 */
+	('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "antonio@shodan.it"),
+	('puppet', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "puppet@shodan.it"),
+	('dummy', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "dummy@shodan.it"), 
+	('slave', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "slave@shodan.it");
 
 DELETE FROM games;
 INSERT INTO games(game_name, game_landscape, game_image, game_description, game_price, game_release) VALUES 
@@ -38,7 +42,10 @@ DELETE FROM has_role;
 INSERT INTO has_role(user_id, role) VALUES
 	(1, "USER"), /* admin -> user role */
     (1, "WRITER"), /* admin -> writer role */
-	(1, "STOREMAN"); /* admin -> storeman role */
+	(1, "STOREMAN"), /* admin -> storeman role */
+    (2, "USER"), /* puppet -> user role */
+    (3, "USER"), /* dummy -> user role */
+    (4, "USER"); /* slave -> user role */
 
 DELETE FROM views;
 INSERT INTO views VALUES 

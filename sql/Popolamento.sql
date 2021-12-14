@@ -4,11 +4,11 @@ SET SQL_SAFE_UPDATES = 0;
 
 DELETE FROM users;
 /* Password: 123 in SHA256 */
-INSERT INTO users(user_name, user_password, user_email) VALUES 
-	('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "antonio@shodan.it"),
-	('puppet', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "puppet@shodan.it"),
-	('dummy', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "dummy@shodan.it"), 
-	('slave', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "slave@shodan.it");
+INSERT INTO users(user_name, user_password, user_email, user_money) VALUES 
+	('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "antonio@shodan.it", 500),
+	('puppet', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "puppet@shodan.it", 500),
+	('dummy', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "dummy@shodan.it", 500), 
+	('slave', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', "slave@shodan.it", 0);
 
 DELETE FROM games;
 INSERT INTO games(game_name, game_landscape, game_image, game_description, game_price, game_release) VALUES 
@@ -61,4 +61,5 @@ INSERT INTO views VALUES
 DELETE FROM cards;
 INSERT INTO cards(card_type, card_number, card_owner, card_date, user_id) VALUES
 	("VISA", 5178916782087614, "Raffaele Zheng", "2023-05-21", 1),
-	("MASTERCARD", 8219671281263412, "Francis J. Erikson", "2024-09-15", 1);
+	("MASTERCARD", 8219671281263412, "Francis J. Erikson", "2024-09-15", 1),
+	("MASTERCARD", 8219671281263413, "Slave Tester", "2020-09-15", 4);

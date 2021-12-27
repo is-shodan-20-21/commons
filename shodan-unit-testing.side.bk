@@ -5320,17 +5320,16 @@
     }, {
       "id": "9316641d-760e-42b1-9519-2393a1a6e8ea",
       "comment": "",
-      "command": "click",
-      "target": "id=login-submit",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "9b9029b6-a66d-4189-9b1e-d65ad52a96a3",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=roles-link",
-      "targets": [],
-      "value": "30000"
+      "command": "sendKeys",
+      "target": "id=login-password",
+      "targets": [
+        ["id=login-password", "id"],
+        ["css=#login-password", "css:finder"],
+        ["xpath=//input[@id='login-password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
     }, {
       "id": "ce7bc77f-4288-4b37-9d9d-8a075ebd9a02",
       "comment": "",
@@ -5344,6 +5343,13 @@
         ["xpath=//div[7]/div", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "9b9029b6-a66d-4189-9b1e-d65ad52a96a3",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=roles-link",
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "a95b4192-2fbb-45f3-8f8d-a622a85e4e77",
       "comment": "",
@@ -5400,13 +5406,6 @@
         ["xpath=//h1[contains(.,'VISA')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "eb81fdd5-8afb-4225-955a-8201e37c2960",
-      "comment": "",
-      "command": "waitForElementPresent",
-      "target": "id=cards-message",
-      "targets": [],
-      "value": "30000"
     }, {
       "id": "ce18494c-8f30-49b0-8b59-720ad98fe151",
       "comment": "",
